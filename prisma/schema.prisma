@@ -14,3 +14,18 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+enum AlbumOrEp{
+  album
+  ep
+}
+
+model Albums{
+  id Int @id @default(autoincrement())
+
+  name String
+  artist String
+  albumOrEp AlbumOrEp
+  releaseYear Int
+  rating Int
+}
